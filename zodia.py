@@ -39,23 +39,24 @@ def menu():
     print("   1. Find Zodiac Sign")
     print("   2. Quit")
 
-while True:
-    menu()
-    choice = input("Enter choice (1 or 2): ")
+def zodiac_main():
+    while True:
+        menu()
+        choice = input("Enter choice (1 or 2): ")
 
-    if choice == '2':
-        print("Existing... Goodbye, Dusty!!!")
-        break
+        if choice == '2':
+            print("Thanks for playing!!!")
+            break
 
-    if choice == '1':
-        try:
-            user_month = input("Enter your birth month (e.g., March or Mar): ").strip()
-            user_day = int(input("Enter your birth day (e.g., 25): "))
+        if choice == '1':
+            try:
+                user_month = input("Enter your birth month (e.g., March or Mar): ").strip()
+                user_day = int(input("Enter your birth day (e.g., 25): "))
 
-            sign = get_zodiac_sign(user_day, user_month)
-            print(f"\nYour Zodiac sign is: **{sign}**")
-        except ValueError:
-            print("Please enter a valid number for the day.")
-            continue
-    else:
-        print("Invalid Choice, you Dusty!!!. Please pick 1 or 2")
+                sign = get_zodiac_sign(user_day, user_month)
+                print(f"\nYour Zodiac sign is: **{sign}**")
+            except ValueError:
+                print("Please enter a valid number for the day.")
+                continue
+        else:
+            print("Invalid Choice, you Dusty!!!. Please pick 1 or 2")
